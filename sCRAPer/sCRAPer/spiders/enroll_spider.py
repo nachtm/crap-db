@@ -62,8 +62,10 @@ def get_parse_dict(course) -> dict:
         _vals.append(d)
     _days = ['mon', 'tue', 'wed', 'thu', 'fri']
     sched = dict(zip(_days, _vals))
+    course_level = str(int(course_num) // 100 * 100)
 
     return dict(
         name=name, credits=credits, dept=dept, course_num=course_num,
         course_section=course_section, prof=prof, description=description,
-        prereq=prereq, building=building, room_num=room_num, sched=sched,)
+        prereq=prereq, building=building, room_num=room_num, sched=sched,
+        course_level=course_level)
